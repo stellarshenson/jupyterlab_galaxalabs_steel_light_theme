@@ -1,0 +1,14 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: v4.3.5
+_src_path: https://github.com/jupyterlab/extension-template
+author_email: konrad.jelen@gmail.com
+author_name: Konrad Jelen
+has_binder: false
+has_settings: false
+kind: theme
+labextension_name: 'galaxalabs_jupyterlab_steel_light_theme'
+project_short_description: Light gray-blue theme in the Win95 light-gray convention, the light counterpart of the GalaxaLabs Steel Dark Theme (Sublime Mariana lineage), designed to reduce eye strain
+python_name: galaxalabs_jupyterlab_steel_light_theme
+repository: ''
+test: false
+

@@ -1,0 +1,143 @@
+/* -----------------------------------------------------------------------------
+| Copyright (c) Max Klein.
+| Distributed under the terms of the Modified BSD License.
+|---------------------------------------------------------------------------- */
+
+/*
+ * Codemirror styling that isn't currently supported by Jupyterlab themes
+ */
+
+/* text rendered in stderr with keyword highlight
+fix: annoying problem of almost invisible text in stderr */
+.jp-RenderedText pre .ansi-yellow-bg {
+  background-color: #c6a44a; /* hsl(43, 52%, 53%), muted yellow for dark text, the dark theme uses #b52318 under light text */
+}
+
+/* stylelint-disable selector-class-pattern */
+.cm-s-jupyter .CodeMirror-activeline-background {
+  background: var(--jp-layout-color1);
+}
+
+.cm-s-jupyter .CodeMirror-guttermarker {
+  color: #4a441c; /* hsl(52, 45%, 20%), the dark theme's #ffee80 hue, 4.5:1 on layout2 */
+}
+
+.cm-s-jupyter .CodeMirror-guttermarker-subtle {
+  color: #5c6670; /* hsl(215, 10%, 40%), the dark theme's #d0d0d0 stepped onto the gray */
+}
+
+.cm-s-jupyter .CodeMirror-linenumber {
+  color: var(
+    --jp-ui-font-color2
+  ); /* the dark theme's #606366 stepped onto the gray */
+}
+
+.cm-s-jupyter .CodeMirror-matchingbracket {
+  background-color: #afc9c0; /* hsl(160, 20%, 74%), the dark theme's #3b514d hue */
+  color: #555120 !important; /* hsl(56, 45%, 23%), the dark theme's #ffef28 hue, 4.5:1 on the bracket background */
+  font-weight: bold;
+}
+
+.cm-s-jupyter div.CodeMirror-selected {
+  background: var(--jp-editor-selected-focused-background);
+}
+/* stylelint-enable selector-class-pattern */
+
+.cm-s-jupyter span.cm-type {
+  color: #41576c; /* hsl(210, 25%, 34%), the dark theme's #abc hue, 4.5:1 on the cell editor */
+  font-weight: bold;
+}
+
+/* override - improve borders of the dir listing */
+.jp-DirListing-header {
+  border-top: var(--jp-border-width) solid var(--jp-border-color1);
+  border-bottom: 2px solid var(--jp-border-color1);
+  z-index: 0;
+}
+
+/* override - execution time extension styling enhancement */
+.execute-time {
+  padding: 2px 1px 1px 3px; /* makes text in execute time padded from left but otherwise small */
+
+  /* margin: 1px 1px 1px 1px;  makes border around execute time thicker */
+  background: var(--jp-layout-color0);
+  border-top: 0 solid var(--jp-cell-editor-border-color);
+}
+
+/* override - add-tab button on the tab bar */
+.lm-TabBar .lm-TabBar-addButton {
+  padding-bottom: 5px; /* make height the same as tabs */
+}
+
+/* override - editor tabs - make light border around tabs */
+.lm-DockPanel-tabBar .lm-TabBar-tab,
+.lm-TabPanel-tabBar .lm-TabBar-tab {
+  border: var(--jp-border-width) solid var(--jp-border-color0);
+  border-bottom: 0; /* removed bottom border */
+}
+
+/* override - remove border from markdown selected output cell */
+.jp-MarkdownOutput {
+  border-width: 0;
+}
+
+/* override - turn border off of the cell input area */
+.jp-InputArea-editor {
+  border: none;
+}
+
+/* override - settings restore button */
+.jp-SettingsHeader-buttonbar > .jp-RestoreButton {
+  color: var(--jp-content-link-color);
+}
+
+/* override - output area scrolling fixes - related to output area 
+ * showing unexpected and unwanted scrollbar */
+.jp-OutputArea-child,
+.jp-OutputArea-output,
+.jp-Cell-outputArea,
+.jp-OutputArea-output.jp-OutputArea-executeResult {
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.jp-Cell.jp-mod-outputsScrolled .jp-Cell-outputArea {
+  max-height: none !important;
+}
+
+.jp-OutputArea {
+  overflow: visible !important;
+}
+
+/* override - height of the text in launcher card */
+.jp-LauncherCard-label p {
+  line-height: 1.2em;
+  font-size: calc(var(--jp-ui-font-size1) * 0.9);
+}
+
+/* override - align markdown tables to left */
+.jp-RenderedHTMLCommon table {
+  margin-left: inherit;
+}
+
+/* override - reduce gap between file browser toolbar icons */
+.jp-FileBrowser-toolbar::part(positioning-region) {
+  gap: 0 !important;
+}
+
+.jp-FileBrowser-toolbar .jp-ToolbarButtonComponent {
+  margin: 4px 1px !important;
+}
+
+.jp-FileBrowser-toolbar
+  .jp-ToolbarButtonComponent[data-command='launcher:create'] {
+  margin-right: 8px !important;
+  max-width: 65px !important;
+}
+
+/* override - suppress stuck pressed-state shadow on file browser toolbar buttons */
+.jp-FileBrowser-toolbar jp-button[aria-pressed='true'] {
+  box-shadow: none !important;
+}
+
+/* EOF */
