@@ -26,7 +26,7 @@ all of MD as it is not optimized for dense, information rich UIs.
 Steel Light: the JupyterLab light theme with every white surface replaced by
 a Win95 light gray shifted toward blue (hue 215, saturation 10%), the same
 departure from neutral gray that Sublime Mariana makes in the dark direction.
-Every chromatic value keeps the hue of the GalaxaLabs Steel dark theme and is
+Every chromatic value keeps the hue of the Steel dark theme and is
 darkened only as far as contrast on the gray requires.
 */
 
@@ -446,7 +446,7 @@ darkened only as far as contrast on the gray requires.
   --jp-editor-cursor-color: var(--jp-ui-font-color0);
 
   /* Sublime Dark Theme (Mariana) inspired CodeMirror specific styles, each hue
-   * taken from the GalaxaLabs Steel dark theme, saturation capped at 45% and
+   * taken from the Steel dark theme, saturation capped at 45% and
    * lightness lowered only until the token reads 4.5:1 on --jp-cell-editor-background */
   --jp-mirror-editor-keyword-color: #7b3c7b; /* pink, dark #ba72ba */
   --jp-mirror-editor-atom-color: #2c5d5d; /* blue5, dark #5fb3b3 */

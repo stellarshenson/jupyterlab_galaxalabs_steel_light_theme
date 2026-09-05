@@ -8,7 +8,7 @@ import * as path from 'path';
  */
 test.use({ autoGoto: false });
 
-const THEME_NAME = 'GalaxaLabs Steel Light Theme';
+const THEME_NAME = 'Steel Light Theme';
 
 // The file browser lists galata's per-test directories with relative "Modified" times
 // that differ between runs; two clean-venv runs an hour apart diverged past the 2 percent
