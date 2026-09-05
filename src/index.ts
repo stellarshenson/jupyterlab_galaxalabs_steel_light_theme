@@ -11,7 +11,7 @@ import { IThemeManager } from '@jupyterlab/apputils';
 const plugin: JupyterFrontEndPlugin<void> = {
   id: 'galaxalabs_jupyterlab_steel_light_theme:plugin',
   description:
-    'Light gray-blue theme in the Win95 light-gray convention, the light counterpart of the Steel Dark Theme (Sublime Mariana lineage), designed to reduce eye strain',
+    'Light gray-blue theme in the Win95 light-gray convention, the light counterpart of Galaxa Dark Theme - Steel (Sublime Mariana lineage), designed to reduce eye strain',
   autoStart: true,
   requires: [IThemeManager],
   activate: (app: JupyterFrontEnd, manager: IThemeManager) => {
@@ -21,7 +21,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
     const style = 'galaxalabs_jupyterlab_steel_light_theme/index.css';
 
     manager.register({
-      name: 'Steel Light Theme',
+      name: 'Galaxa Light Theme - Steel',
       themeScrollbars: true,
       isLight: true,
       load: () => manager.loadCSS(style),
