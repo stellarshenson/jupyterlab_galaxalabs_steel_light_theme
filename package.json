@@ -1,6 +1,6 @@
 {
     "name": "galaxalabs_jupyterlab_steel_light_theme",
-    "version": "1.0.2",
+    "version": "1.0.8",
     "description": "Light gray-blue theme in the Win95 light-gray convention, the light counterpart of the GalaxaLabs Steel Dark Theme (Sublime Mariana lineage), designed to reduce eye strain",
     "keywords": [
         "jupyter",
@@ -96,7 +96,8 @@
         "node_modules",
         "dist",
         "coverage",
-        "**/*.d.ts"
+        "**/*.d.ts",
+        "ui-tests"
     ],
     "eslintConfig": {
         "extends": [

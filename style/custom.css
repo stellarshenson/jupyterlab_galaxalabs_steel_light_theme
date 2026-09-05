@@ -11,6 +11,69 @@
 fix: annoying problem of almost invisible text in stderr */
 .jp-RenderedText pre .ansi-yellow-bg {
   background-color: #c6a44a; /* hsl(43, 52%, 53%), muted yellow for dark text, the dark theme uses #b52318 under light text */
+
+  /* the theme replaced core's yellow background, so core's foregrounds were not tuned
+     against this one; the content font colour reads 6.4:1 on it */
+  color: var(--jp-content-font-color0);
+}
+
+/* galaxalabs customisation - core hardcodes the ANSI foregrounds for white; darkened to >= 4.5:1 on the error background.
+ * These class rules cover the class-based colours; black is left to core, whose #3e424d and #282c36
+ * already read above 5:1 here. The inline 256-colour spans are covered by the rule below them. */
+.jp-RenderedText pre .ansi-red-fg:not([class*='-bg']),
+.jp-RenderedText pre .ansi-red-intense-fg:not([class*='-bg']) {
+  color: #87333a; /* hsl(355, 45%, 36%), the --jp-mirror-editor-number-color hue, 4.5:1 on the error background */
+}
+
+.jp-RenderedText pre .ansi-green-fg:not([class*='-bg']),
+.jp-RenderedText pre .ansi-green-intense-fg:not([class*='-bg']) {
+  color: #3e562a; /* hsl(93, 34%, 25%), the --jp-mirror-editor-string-color hue, 4.5:1 on the error background */
+}
+
+.jp-RenderedText pre .ansi-yellow-fg:not([class*='-bg']),
+.jp-RenderedText pre .ansi-yellow-intense-fg:not([class*='-bg']) {
+  color: #4a441c; /* hsl(52, 45%, 20%), the .CodeMirror-guttermarker value, 5.4:1 on the error background */
+}
+
+.jp-RenderedText pre .ansi-blue-fg:not([class*='-bg']),
+.jp-RenderedText pre .ansi-blue-intense-fg:not([class*='-bg']) {
+  color: #2c5175; /* hsl(210, 45%, 32%), the --jp-mirror-editor-meta-color hue, 4.5:1 on the error background */
+}
+
+.jp-RenderedText pre .ansi-magenta-fg:not([class*='-bg']),
+.jp-RenderedText pre .ansi-magenta-intense-fg:not([class*='-bg']) {
+  color: #743974; /* hsl(300, 34%, 34%), the --jp-mirror-editor-keyword-color hue, 4.5:1 on the error background */
+}
+
+.jp-RenderedText pre .ansi-cyan-fg:not([class*='-bg']),
+.jp-RenderedText pre .ansi-cyan-intense-fg:not([class*='-bg']) {
+  color: #295656; /* hsl(180, 35%, 25%), the --jp-mirror-editor-atom-color hue, 4.5:1 on the error background */
+}
+
+/* galaxalabs customisation - core's white and intense-white foregrounds are a light beige
+ * tuned for a white page and read at 1.2:1 and 1.6:1 here. Mapped onto the neutral text
+ * ramp with the intensity order kept (intense is the darker, more prominent one). Every
+ * foreground rule in this block is scoped with :not([class*='-bg']) so a span that also
+ * carries an ANSI background class keeps core's values, which were tuned against it. */
+.jp-RenderedText pre .ansi-white-fg:not([class*='-bg']) {
+  color: var(--jp-content-font-color2);
+}
+
+.jp-RenderedText pre .ansi-white-intense-fg:not([class*='-bg']) {
+  color: var(--jp-content-font-color0);
+}
+
+/* galaxalabs customisation - IPython emits 256-colour SGR for the echoed source line,
+ * which core renders as an inline `color: rgb(...)` on a span carrying no ansi class
+ * (rendermime renderers.js:995-1000), so no class rule can reach it; measured 2.0:1 on
+ * the error background. An author !important declaration is the only cascade route to
+ * an inline style. Scoped to the stderr mime type so 256-colour stdout keeps its hue,
+ * and to `style` values that begin with `color:` and carry no background, so a span with an ANSI
+ * background keeps core's tuned pair - the same guard the class rules above use. */
+.jp-RenderedText[data-mime-type='application/vnd.jupyter.stderr']
+  pre
+  span[style^='color:']:not([style*='background']) {
+  color: var(--jp-content-font-color1) !important;
 }
 
 /* stylelint-disable selector-class-pattern */
@@ -86,29 +149,6 @@ fix: annoying problem of almost invisible text in stderr */
   border: none;
 }
 
-/* override - settings restore button */
-.jp-SettingsHeader-buttonbar > .jp-RestoreButton {
-  color: var(--jp-content-link-color);
-}
-
-/* override - output area scrolling fixes - related to output area 
- * showing unexpected and unwanted scrollbar */
-.jp-OutputArea-child,
-.jp-OutputArea-output,
-.jp-Cell-outputArea,
-.jp-OutputArea-output.jp-OutputArea-executeResult {
-  max-height: none !important;
-  overflow: visible !important;
-}
-
-.jp-Cell.jp-mod-outputsScrolled .jp-Cell-outputArea {
-  max-height: none !important;
-}
-
-.jp-OutputArea {
-  overflow: visible !important;
-}
-
 /* override - height of the text in launcher card */
 .jp-LauncherCard-label p {
   line-height: 1.2em;
@@ -138,6 +178,22 @@ fix: annoying problem of almost invisible text in stderr */
 /* override - suppress stuck pressed-state shadow on file browser toolbar buttons */
 .jp-FileBrowser-toolbar jp-button[aria-pressed='true'] {
   box-shadow: none !important;
+}
+
+/* galaxalabs customisation - rendermime sets text-decoration none on links, so a link in a
+ * markdown cell is signalled by colour alone at 1.4:1 from body text; no colour satisfies both
+ * 4.5:1 on the page and 3:1 against body text, so the affordance is the underline. */
+.jp-RenderedHTMLCommon a:link,
+.jp-RenderedHTMLCommon a:visited {
+  text-decoration: underline;
+}
+
+/* galaxalabs customisation - core signals a disabled menu command with --jp-ui-font-color3
+ * alone, which has to stay dark enough to clear 4.5:1 and therefore cannot step far from the
+ * enabled colour. Italic is the non-colour affordance, so the signal costs no contrast. */
+.lm-Menu-item.lm-mod-disabled,
+.lm-MenuBar-item.lm-mod-disabled {
+  font-style: italic;
 }
 
 /* EOF */
