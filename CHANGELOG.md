@@ -4,6 +4,13 @@
 
 <!-- <END NEW CHANGELOG ENTRY> -->
 
+## [1.0.11] - 2026-09-06
+
+### Changed
+
+- Colourful-tab accents no longer inherit the tab extension's pastels, which were drawn for a white canvas. The six hues are kept and the chroma capped at CIELAB C\* 15, the ceiling this theme already uses for a large tinted surface, leaving the six separable at a minimum pairwise dE76 of 10.9 and every tab label above 6.2:1
+- README now names the renamed Titanium sibling instead of Concrete
+
 ## [1.0.10] - 2026-09-05
 
 ### Changed

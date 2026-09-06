@@ -12,7 +12,7 @@
 
 Light gray-blue theme for JupyterLab in the Win95 light-gray convention, the light counterpart of the GalaxaLabs Steel Dark Theme (Sublime Mariana lineage), designed to reduce eye strain. It keeps the muted gray-blue surfaces and the minimal intrusion into standard JupyterLab styling of its dark sibling, with the contrast turned toward a light workspace.
 
-This is the light counterpart of the [GalaxaLabs Steel Dark Theme](https://github.com/stellarshenson/jupyterlab_stellars_sublime_theme), in the same way the Concrete light theme pairs with the [GalaxaLabs Concrete Dark Theme](https://github.com/stellarshenson/jupyterlab_stellars_darcula_theme).
+This is the light counterpart of the [GalaxaLabs Steel Dark Theme](https://github.com/stellarshenson/jupyterlab_galaxalabs_steel_dark_theme), in the same way the Titanium light theme pairs with the [GalaxaLabs Titanium Dark Theme](https://github.com/stellarshenson/jupyterlab_galaxalabs_titanium_dark_theme).
 
 ![](https://github.com/stellarshenson/jupyterlab_galaxalabs_steel_light_theme/blob/main/screenshot-steel-light.png?raw=true)
 
