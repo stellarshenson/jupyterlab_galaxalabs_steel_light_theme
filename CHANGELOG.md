@@ -4,6 +4,12 @@
 
 <!-- <END NEW CHANGELOG ENTRY> -->
 
+## [1.0.13] - 2026-09-07
+
+### Changed
+
+- Removed the theme's own `--jp-colourful-tab-*` override block. `jupyterlab_colourful_tab_extension` 1.1.21 ships one muted light palette that reads as soft tints on this theme's grey tab bar as well as on stock JupyterLab Light, so the theme no longer needs to repaint it. The override had also outranked the extension's `:root` block, which is where a user's own settings palette is written, so palette edits in the Settings Editor now apply on this theme
+
 ## [1.0.12] - 2026-09-07
 
 ### Changed
