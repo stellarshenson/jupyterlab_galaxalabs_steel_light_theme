@@ -562,33 +562,33 @@ darkened only as far as contrast on the gray requires.
 
    The extension hard-codes its own six pastels under a bare `:root` and only
    switches them on `[data-jp-theme-light='false']`, so every light theme
-   receives a palette drawn for a white canvas. Those pastels reach CIELAB
-   C* 21 unselected and C* 49 selected, against this theme's tab-bar surface at
-   C* 4.1 - louder than anything else the theme paints.
+   receives a palette drawn for a white canvas. This theme's tab bar sits 21
+   CIELAB lightness points below that canvas, so the same pastels read louder
+   here than they do on stock JupyterLab Light.
 
-   These overrides keep the extension's six hues but cap the chroma at C* 15,
-   the ceiling this theme already uses for a large tinted surface
-   (`--jp-notebook-select-background`, `--jp-editor-selected-focused-background`).
-   The six stay separable at a minimum pairwise dE76 of 10.9 unselected and
-   16.4 selected, and every tab label holds at least 6.2:1 against them.
+   These overrides keep the extension's six hues and their lightness and take
+   the chroma to 85 percent of stock. An earlier revision cut it to 70 percent
+   and the hue stopped reading against the grey bar. Alpha was rejected as the
+   mechanism: the tab bar is transparent, so a translucent tab composites over
+   whatever sits behind it and the result is not stable.
 
    `body[...]` rather than `:root` on purpose: the extension declares these at
    `:root` (specificity 0,1,0), so a second `:root` block would be decided by
    stylesheet load order. `body` plus an attribute selector is (0,1,1) and wins
    outright. JupyterLab sets both attributes on `document.body`. */
 body[data-jp-theme-light='true'] {
-  --jp-colourful-tab-rose: #efd2d9;
-  --jp-colourful-tab-peach: #eddac9;
-  --jp-colourful-tab-lemon: #eae5c1;
-  --jp-colourful-tab-mint: #c7e7c4;
-  --jp-colourful-tab-sky: #b7d4e8;
-  --jp-colourful-tab-lavender: #ddd3ea;
+  --jp-colourful-tab-rose: #fbd8e0;
+  --jp-colourful-tab-peach: #fce6d0;
+  --jp-colourful-tab-lemon: #fef9cc;
+  --jp-colourful-tab-mint: #cef5cb;
+  --jp-colourful-tab-sky: #afd3eb;
+  --jp-colourful-tab-lavender: #e4d7f3;
 
   /* Selected tab - same hue, one step up in chroma */
-  --jp-colourful-tab-rose-active: #d9acb6;
-  --jp-colourful-tab-peach-active: #dbbb9f;
-  --jp-colourful-tab-lemon-active: #dcd39e;
-  --jp-colourful-tab-mint-active: #aad2a5;
-  --jp-colourful-tab-sky-active: #9dbbd2;
-  --jp-colourful-tab-lavender-active: #bdaad2;
+  --jp-colourful-tab-rose-active: #f5a2b6;
+  --jp-colourful-tab-peach-active: #f9c08b;
+  --jp-colourful-tab-lemon-active: #fef089;
+  --jp-colourful-tab-mint-active: #9ded96;
+  --jp-colourful-tab-sky-active: #7ec0ec;
+  --jp-colourful-tab-lavender-active: #c09eea;
 }

@@ -4,6 +4,13 @@
 
 <!-- <END NEW CHANGELOG ENTRY> -->
 
+## [1.0.12] - 2026-09-07
+
+### Changed
+
+- Colourful-tab accents retuned from 70 to 85 percent of the tab extension's stock chroma. The previous cap sat too far below the palette that extension draws for a white canvas, and against this theme's tab bar at CIELAB L\* 73 - 21 points lower - the hue stopped reading and the tabs rendered as pale grey patches. Hue angle and lightness are unchanged; only chroma moves
+- Alpha was evaluated as an alternative and rejected: the dock tab bar computes to `rgba(0, 0, 0, 0)`, so a translucent tab composites over whatever sits behind it rather than over a fixed surface
+
 ## [1.0.11] - 2026-09-06
 
 ### Changed
