@@ -196,4 +196,26 @@ fix: annoying problem of almost invisible text in stderr */
   font-style: italic;
 }
 
+/* galaxalabs customisation - marked writes each task-list box as a disabled checkbox, which
+ * Chrome draws in light grey at low contrast, so a checked box and an unchecked box are hard to
+ * tell apart on the page. The theme draws the box instead: an outline in the content grey
+ * (6.6:1 on the page) when unchecked, the brand blue (4.1:1) with a white tick (6.4:1 on the
+ * blue) when checked. The boxes stay disabled, so the rendered view stays read-only. */
+.jp-RenderedMarkdown input[type='checkbox']:disabled {
+  appearance: none;
+  width: 13px;
+  height: 13px;
+  border: 1px solid var(--jp-content-font-color2);
+  border-radius: 2px;
+  background-color: transparent;
+  vertical-align: -3px; /* the native box sits on the baseline; drawn, it would sit on its 3px bottom margin */
+}
+
+.jp-RenderedMarkdown input[type='checkbox']:disabled:checked {
+  border-color: var(--jp-brand-color1);
+  background: var(--jp-brand-color1)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+}
+
 /* EOF */

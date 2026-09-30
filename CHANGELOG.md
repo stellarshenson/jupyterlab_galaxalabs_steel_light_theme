@@ -4,6 +4,12 @@
 
 <!-- <END NEW CHANGELOG ENTRY> -->
 
+## [1.0.14] - 2026-09-30
+
+### Fixed
+
+- Task-list checkboxes in rendered Markdown (`- [x]` and `- [ ]`) are now drawn by the theme. The browser drew these disabled boxes in light grey, at 1.3:1 checked and 1.1:1 unchecked against the page, so the two states were hard to tell apart. An unchecked box is now a grey outline (6.6:1), and a checked box is filled with the brand blue (4.2:1) and carries a white tick (6.5:1 on the blue). The boxes stay disabled, so the rendered view stays read-only
+
 ## [1.0.13] - 2026-09-07
 
 ### Changed
