@@ -225,4 +225,36 @@ fix: annoying problem of almost invisible text in stderr */
   scrollbar-width: thin;
 }
 
+/* file browser drag and drop - the stock rules put the light row text on the pale
+   --jp-brand-color3 and the drag image on a half-transparent fill; the row under a dragged
+   file takes the darkest brand colour with the inverse text (6.4:1 or more) and a dashed
+   outline, the drag image the sidebar colour (7:1) */
+.jp-DirListing-item.jp-mod-dropTarget {
+  background: var(--jp-brand-color0);
+  color: var(--jp-ui-inverse-font-color1);
+  outline: 1px dashed var(--jp-ui-inverse-font-color1);
+  outline-offset: -2px;
+}
+
+.jp-DirListing-item.jp-mod-dropTarget .jp-DirListing-itemModified,
+.jp-DirListing-item.jp-mod-dropTarget .jp-DirListing-itemFileSize {
+  color: inherit;
+}
+
+.jp-DirListing-item.jp-mod-dropTarget .jp-icon-selectable[fill] {
+  fill: var(--jp-ui-inverse-font-color1);
+}
+
+/* a selected row turns its icon white, which the light drag image does not carry */
+.jp-DirListing-item.lm-mod-drag-image .jp-icon-selectable[fill] {
+  fill: var(--jp-ui-font-color0);
+}
+
+.jp-DirListing-item.lm-mod-drag-image,
+.jp-DirListing-item.jp-mod-selected.lm-mod-drag-image {
+  background-color: var(--jp-layout-color2);
+  color: var(--jp-ui-font-color0);
+  border: var(--jp-border-width) solid var(--jp-brand-color1);
+}
+
 /* EOF */

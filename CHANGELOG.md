@@ -4,6 +4,13 @@
 
 <!-- <END NEW CHANGELOG ENTRY> -->
 
+## [1.0.19] - 2026-10-14
+
+### Fixed
+
+- The file browser row under a dragged file is readable: light text and icons on the darkest brand blue with a dashed outline (6.4:1)
+- The drag image of a file uses the sidebar colour with the main text colour and an accent border, in place of a half-transparent fill under grey text
+
 ## [1.0.16] - 2026-10-07
 
 ### Changed
