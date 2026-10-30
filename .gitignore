@@ -15,6 +15,9 @@ galaxalabs_jupyterlab_steel_light_theme/_version.py
 # Edit at https://www.gitignore.io/?templates=python
 
 ### Python ###
+# Virtual environments
+.venv
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -130,3 +133,8 @@ tsconfig.tsbuildinfo
 ui-tests/node_modules/
 ui-tests/test-results/
 ui-tests/playwright-report/
+
+# Run output
+logs/
+tmp/
+junit.xml

@@ -18,7 +18,7 @@ This is the light counterpart of the [GalaxaLabs Steel Dark Theme](https://githu
 
 ## Requirements
 
-- JupyterLab >= 4.0.0
+- JupyterLab >= 4.6.0
 
 ## Install
 
