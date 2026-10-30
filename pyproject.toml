@@ -44,8 +44,8 @@ artifacts = ["galaxalabs_jupyterlab_steel_light_theme/labextension"]
 exclude = [".github", "binder"]
 
 [tool.hatch.build.targets.wheel.shared-data]
-"galaxalabs_jupyterlab_steel_light_theme/labextension" = "share/jupyter/labextensions/galaxalabs_jupyterlab_steel_light_theme"
-"install.json" = "share/jupyter/labextensions/galaxalabs_jupyterlab_steel_light_theme/install.json"
+"galaxalabs_jupyterlab_steel_light_theme/labextension" = "share/jupyter/labextensions/@stellarshenson/galaxalabs-jupyterlab-steel-light-theme"
+"install.json" = "share/jupyter/labextensions/@stellarshenson/galaxalabs-jupyterlab-steel-light-theme/install.json"
 
 [tool.hatch.build.hooks.version]
 path = "galaxalabs_jupyterlab_steel_light_theme/_version.py"

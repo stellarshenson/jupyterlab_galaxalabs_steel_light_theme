@@ -12,5 +12,5 @@ except ImportError:
 def _jupyter_labextension_paths():
     return [{
         "src": "labextension",
-        "dest": "galaxalabs_jupyterlab_steel_light_theme"
+        "dest": "@stellarshenson/galaxalabs-jupyterlab-steel-light-theme"
     }]

@@ -1,7 +1,7 @@
 {
   "name": "jupyterlab_galaxalabs_steel_light_theme-ui-tests",
   "version": "1.0.0",
-  "description": "JupyterLab galaxalabs_jupyterlab_steel_light_theme Integration Tests",
+  "description": "JupyterLab @stellarshenson/galaxalabs-jupyterlab-steel-light-theme Integration Tests",
   "private": true,
   "scripts": {
     "start": "jupyter lab --config jupyter_server_test_config.py",

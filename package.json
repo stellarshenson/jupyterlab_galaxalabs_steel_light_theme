@@ -1,6 +1,6 @@
 {
-    "name": "galaxalabs_jupyterlab_steel_light_theme",
-    "version": "1.0.19",
+    "name": "@stellarshenson/galaxalabs-jupyterlab-steel-light-theme",
+    "version": "1.0.20",
     "description": "Light gray-blue theme in the Win95 light-gray convention, the light counterpart of Galaxa Dark Theme - Steel (Sublime Mariana lineage), designed to reduce eye strain",
     "keywords": [
         "jupyter",
@@ -128,5 +128,8 @@
             "alpha-value-notation": null,
             "color-function-notation": null
         }
+    },
+    "allowScripts": {
+        "@fortawesome/fontawesome-free@5.15.4": true
     }
 }

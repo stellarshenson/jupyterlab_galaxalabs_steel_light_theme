@@ -172,7 +172,7 @@ test('should emit an activation console message', async ({ page }) => {
     logs.filter(
       s =>
         s ===
-        'JupyterLab extension galaxalabs_jupyterlab_steel_light_theme is activated!'
+        'JupyterLab extension @stellarshenson/galaxalabs-jupyterlab-steel-light-theme is activated!'
     )
   ).toHaveLength(1);
 });
