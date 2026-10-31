@@ -26,6 +26,17 @@ jobs:
     - name: Install dependencies
       run: python -m pip install -U "jupyterlab>=4.6,<5"
 
+    - name: Lint the extension
+      run: |
+        set -eux
+        jlpm
+        jlpm run lint:check
+
+    - name: Test the extension
+      run: |
+        set -eux
+        jlpm run test
+
     - name: Build the extension
       run: |
         set -eux
@@ -73,6 +84,7 @@ jobs:
         sudo rm -rf $(which node)
 
         pip install "jupyterlab>=4.6,<5" galaxalabs_jupyterlab_steel_light_theme*.whl
+
 
         jupyter labextension list
         jupyter labextension list 2>&1 | grep -ie "@stellarshenson/galaxalabs-jupyterlab-steel-light-theme.*OK"
@@ -122,8 +134,7 @@ jobs:
     - name: Install browser
       run: |
         set -eux
-        jlpm playwright install-deps
-        jlpm playwright install chromium
+        jlpm playwright install chromium --only-shell
       working-directory: ui-tests
 
     - name: Execute integration tests
@@ -135,7 +146,20 @@ jobs:
       if: always()
       uses: actions/upload-artifact@v4
       with:
-        name: jupyterlab_galaxalabs_steel_light_theme-playwright-tests
+        name: galaxalabs_jupyterlab_steel_light_theme-playwright-tests
         path: |
           ui-tests/test-results
           ui-tests/playwright-report
+
+  check_links:
+    name: Check Links
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: jupyterlab/maintainer-tools/.github/actions/base-setup@v1
+        with:
+          python_version: '3.13'
+      - uses: jupyterlab/maintainer-tools/.github/actions/check-links@v1
+        with:
+          ignore_links: "https://www.npmjs.com/package/.* https://www.youtube.com/.*"

@@ -17,7 +17,7 @@ All workspace rules apply. Project-specific rules below strengthen or extend the
 
 JupyterLab theme extension providing a light gray-blue color scheme in the Win95 light-gray convention, the light counterpart of the GalaxaLabs Steel Dark Theme. Current version 1.0.0.
 
-- npm package: `galaxalabs_jupyterlab_steel_light_theme`
+- npm package: `@stellarshenson/galaxalabs-jupyterlab-steel-light-theme`
 - PyPI package: `galaxalabs_jupyterlab_steel_light_theme`
 - GitHub: `stellarshenson/jupyterlab_galaxalabs_steel_light_theme`
 - Use `make publish` to build and publish to both registries

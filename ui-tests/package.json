@@ -1,5 +1,5 @@
 {
-  "name": "jupyterlab_galaxalabs_steel_light_theme-ui-tests",
+  "name": "@stellarshenson/galaxalabs-jupyterlab-steel-light-theme-ui-tests",
   "version": "1.0.0",
   "description": "JupyterLab @stellarshenson/galaxalabs-jupyterlab-steel-light-theme Integration Tests",
   "private": true,
