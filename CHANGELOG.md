@@ -2,6 +2,16 @@
 
 <!-- <START NEW CHANGELOG ENTRY> -->
 
+## [1.0.26] - 2026-11-03
+
+### Fixed
+
+- A docked side panel shows one line between its title band and its first section band; the theme had drawn none, because `--jp-border-color2` had the band colour
+
+### Changed
+
+- `--jp-border-color2` takes `--jp-layout-color3`, so every line drawn in it, toolbar borders included, is `#9aa2ac` instead of `#aeb4bc`
+
 ## [1.0.24] - 2026-10-31
 
 ### Changed

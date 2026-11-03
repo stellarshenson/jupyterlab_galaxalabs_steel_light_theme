@@ -113,7 +113,7 @@ darkened only as far as contrast on the gray requires.
 
   --jp-border-color0: var(--jp-layout-color3);
   --jp-border-color1: var(--jp-layout-color2);
-  --jp-border-color2: var(--jp-layout-color2);
+  --jp-border-color2: var(--jp-layout-color3);
   --jp-border-color3: var(
     --jp-layout-color2
   ); /* galaxalabs customisation, the dark theme uses layout0 here because a border sits darker than its layout; on the light side that is layout2 */
